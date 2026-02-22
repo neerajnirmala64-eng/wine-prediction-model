@@ -47,6 +47,6 @@ if st.button("Predict"):
     prediction = model.predict(input_data)[0]
 
     if prediction == 0:
-        st.success("White wine")
+        st.success("white wine")
     else:
-        st.error("Red wine")
+        st.error("red wine")
