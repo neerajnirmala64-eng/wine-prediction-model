@@ -15,17 +15,17 @@ model = joblib.load("dtc_model (1).pkl")  # adjust if renamed
 
 st.title(" 🍻 Wine Type Prediction 🍷")
 
-fixed_acidity🤢 = st.number_input("fixed_acidity")
-volatile_acidity👻 = st.number_input("volatile_acidity")
-citric_acid🍋 = st.number_input("citric_acid")
-residual_sugar🥶 = st.number_input("residual_sugar")
-chlorides©️ = st.number_input("chlorides")
-free_sulfur_dioxide🫢 = st.number_input("free_sulfur_dioxide")
+fixed_acidity = st.number_input("fixed_acidity🤢")
+volatile_acidity = st.number_input("volatile_acidity👻")
+citric_acid = st.number_input("citric_acid🍋")
+residual_sugar = st.number_input("residual_sugar")
+chlorides = st.number_input("chlorides")
+free_sulfur_dioxide = st.number_input("free_sulfur_dioxide")
 total_sulfur_dioxide = st.number_input("total_sulfur_dioxide")
 density = st.number_input("density")
-pH😶‍🌫️ = st.number_input("pH")
+pH = st.number_input("pH😶‍🌫️")
 sulphates = st.number_input("sulphates")
-alcohol = st.number_input("alcohol")
+alcohol = st.number_input("alcohol🍷")
 quality = st.number_input("quality")
 
 input_data = pd.DataFrame([[
