@@ -7,13 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1oSZQecnWcM4OT95ftPgs9u6bgH2Bo-nO
 """
 
-import steamlit as st
+import streamlit as st
 import joblib
+import pandas as pd
 
-model = joblib.load("dtc_model.pkl")
+model = joblib.load("/mnt/data/dtc_model (1).pkl")  # adjust if renamed
 
-st.title("wine type prediction !")
-
+st.title("Wine Type Prediction")
 
 fixed_acidity = st.number_input("fixed_acidity")
 volatile_acidity = st.number_input("volatile_acidity")
@@ -28,24 +28,26 @@ sulphates = st.number_input("sulphates")
 alcohol = st.number_input("alcohol")
 quality = st.number_input("quality")
 
-input_data = pd.DataFrame([[
-    "fixed_acidity": [fixed_acidity],
-    "volatile_acidity": [volatile],
-    "citric_acid": [citric_acid],
-    "residual_sugar": [residual_sugar],
-    "chlorides": [chlorides],
-    "free_sulfur_dioxide": [free_sulfur_dioxide],
-    "total_sulfur_dioxide": [total_sulfur_dioxide],
-    "density": [density],
-    "pH": [pH],
-    "sulphates": [sulphates],
-    "alcohol": [alcohol],
-    "quality": [quality]
-]])
+input_data = pd.DataFrame([{
+    "fixed_acidity": fixed_acidity,
+    "volatile_acidity": volatile_acidity,
+    "citric_acid": citric_acid,
+    "residual_sugar": residual_sugar,
+    "chlorides": chlorides,
+    "free_sulfur_dioxide": free_sulfur_dioxide,
+    "total_sulfur_dioxide": total_sulfur_dioxide,
+    "density": density,
+    "pH": pH,
+    "sulphates": sulphates,
+    "alcohol": alcohol,
+    "quality": quality
+}])
 
-if st.button("predict"):
+if st.button("Predict"):
     prediction = model.predict(input_data)[0]
+
     if prediction == 0:
-        st.success("white wine")
+        st.success("White wine")
     else:
+        st.error("Red wine")
         st.error("red wine")
