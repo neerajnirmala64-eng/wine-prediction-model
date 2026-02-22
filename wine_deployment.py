@@ -13,7 +13,7 @@ import pandas as pd
 
 model = joblib.load("dtc_model (1).pkl")  # adjust if renamed
 
-st.title(" 🍻 Wine Type Prediction 🍷")
+st.title(" 🍻 WINE TYPE PREDICTION 🍷")
 
 fixed_acidity = st.number_input("fixed_acidity🤢")
 volatile_acidity = st.number_input("volatile_acidity👻")
