@@ -50,4 +50,3 @@ if st.button("Predict"):
         st.success("White wine")
     else:
         st.error("Red wine")
-        st.error("red wine")
