@@ -11,7 +11,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model = joblib.load("/mnt/data/dtc_model (1).pkl")  # adjust if renamed
+model = joblib.load("dtc_model (1).pkl")  # adjust if renamed
 
 st.title("Wine Type Prediction")
 
